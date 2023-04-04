@@ -1,5 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Signika Negative', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+body {
+  background-color: rgb(32, 31, 31);
+}
+
+header {
+  background-color: rgb(32, 31, 31);
+  border-bottom: solid 1px rgb(51, 47, 47);
+  padding: 10px 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  max-width: 600px;
+  letter-spacing: 0.1em;
+}
+
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #84d343;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 100px;
+  border-radius: 10px;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  box-shadow: 0 0 10px #84d343;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header__container {
+  display: flex;align-items: center;
+  justify-content: space-between;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .button {
+    padding: 10px 170px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .container {
+    padding: 0 10px;
+  }
+  .button {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    font-size: 25px;
+  }
 }
