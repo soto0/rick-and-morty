@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Head from 'next/head';
 import Layout from "@/layout/Layout";
-import CategoryCard from "@/components/CategoryCard/CategoryCard";
+import CategoryCards from "@/components/CategoryCards/CategoryCards";
 
 
 const Categories: FC = () => {
@@ -11,7 +11,7 @@ const Categories: FC = () => {
                 <title>Categories | Rick And Morty</title>
             </Head>
             <Layout>
-                <CategoryCard />
+                <CategoryCards />
             </Layout>
         </>
     );
