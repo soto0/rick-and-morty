@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Header.module.scss';
 import Logo from './../../icons/logo.png';
-import Link from 'next/link';
 
 const Header: FC = () => {
     return (

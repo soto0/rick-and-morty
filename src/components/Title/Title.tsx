@@ -1,8 +1,8 @@
 import { FC } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Title.module.scss';
 import MainIcon from './../../icons/main.png';
-import Link from 'next/link';
 
 const Title: FC = () => {
     return (
