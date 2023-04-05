@@ -4,6 +4,7 @@ import { charactersAPI } from "@/services/Characters";
 import { ICharacters } from "@/models/ICharacters";
 import Loader from "@/components/Loader/Loader";
 import CharacterCard from "../CharacterCard/CharacterCard";
+import Error from "@/components/Error/Error";
 
 const CharactersList: FC = () => {
     const { data: characters, error, isLoading, isSuccess } = charactersAPI.useGetCharactersQuery();
@@ -13,7 +14,7 @@ const CharactersList: FC = () => {
             <div className="container">
                 <h3 className={styles.title}>Characters</h3>
                 <div className={styles.characters__block}>
-                    {error && <h1>da</h1>}
+                    {error && <Error />}
                     {isLoading && <Loader />}
                     {isSuccess &&
                         characters && characters.map((character: ICharacters) => {
