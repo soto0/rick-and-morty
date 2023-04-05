@@ -8,6 +8,15 @@ const CharactersList: FC = () => {
             <div className="container">
                 <h3 className={styles.title}>Characters</h3>
                 <div className={styles.characters__block}>
+                    // тестовые блоки
+                    <CharacterCard />
+                    <CharacterCard />
+                    <CharacterCard />
+                    <CharacterCard />
+                    <CharacterCard />
+                    <CharacterCard />
+                    <CharacterCard />
+                    <CharacterCard />
                     <CharacterCard />
                 </div>
             </div>
