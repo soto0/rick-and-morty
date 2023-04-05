@@ -2,24 +2,31 @@ import { FC } from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import styles from './CharacterCard.module.scss';
+import { charactersAPI } from "@/services/Characters";
 
-const CharacterCard: FC = () => {
+interface CharacterCard {
+    Id: number,
+    Name: string,
+    Status: string,
+    Species: string,
+    LastLocation: string,
+    LocationUrl: string,
+    Image: string,
+};
+
+const CharacterCard: FC<CharacterCard> = (props: CharacterCard) => {
     return (
         <div className={styles.character__card}>
-            <Image className={styles.character__card__icon} src='https://rickandmortyapi.com/api/character/avatar/254.jpeg' alt="card" width={254} height={224} />
+            <Image className={styles.character__card__icon} src={props.Image} alt="card" width={254} height={224} />
             <div className={styles.character__card__info}>
-                <Link href='/Character/1' className={styles.name}>Rick Sanches</Link>
+                <Link href={"/Character/" + props.Id} className={styles.name}>{props.Name}</Link>
                 <div className={styles.bio__block}>
-                    <span className={styles.status__ellipse__alive}></span>
-                    <p className={styles.bio}>Alive | Human</p>
+                    <span className={props.Status === 'Alive' ? styles.status__ellipse__alive : styles.status__ellipse__dead}></span>
+                    <p className={styles.bio}>{props.Status} | {props.Species}</p>
                 </div>
                 <div className={styles.location__block}>
                     <h5 className={styles.info__title}>Last known location:</h5>
-                    <Link href='/Location/1' className={styles.info__text}>Citadel of Ricks</Link>
-                </div>
-                <div className={styles.seen__block}>
-                    <h5 className={styles.info__title}>First seen in:</h5>
-                    <Link href='/Episode/1' className={styles.info__text}>The Ricklantis Mixup</Link>
+                    <Link href={"/Location/" + props.LocationUrl} className={styles.info__text}>{props.LastLocation}</Link>
                 </div>
             </div>
         </div>
