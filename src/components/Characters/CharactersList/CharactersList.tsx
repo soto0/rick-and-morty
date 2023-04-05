@@ -4,10 +4,8 @@ import { charactersAPI } from "@/services/Characters";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import { ICharacters } from "@/models/ICharacters";
 
-type CharactersType = ICharacters;
-
 const CharactersList: FC = () => {
-    const { data, error, isLoading } = charactersAPI.useGetCharactersQuery();
+    const { data: characters, error, isLoading } = charactersAPI.useGetCharactersQuery();
 
     return (
         <section className={styles.characters__list}>
@@ -15,7 +13,7 @@ const CharactersList: FC = () => {
                 <h3 className={styles.title}>Characters</h3>
                 <div className={styles.characters__block}>
                     {
-                        data && (data as unknown as CharactersType).results.map((character: ICharacters) => {
+                        characters && characters.map((character: ICharacters) => {
                             return (
                                 <CharacterCard
                                     Id={character.id}

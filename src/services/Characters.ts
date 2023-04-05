@@ -9,7 +9,8 @@ export const charactersAPI = createApi({
         getCharacters: build.query<ICharacters[], void>({
             query: () => ({
                 url: '/character'
-            })
+            }),
+            transformResponse: (response: any) => response.results
         })
     })
 });
