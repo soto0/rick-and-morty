@@ -23,6 +23,7 @@ const CharactersList: FC = () => {
                                     LastLocation={character.location.name}
                                     LocationUrl={character.location.url}
                                     Image={character.image}
+                                    key={character.id}
                                 />
                             )
                         })

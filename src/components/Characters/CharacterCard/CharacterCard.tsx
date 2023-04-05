@@ -15,9 +15,11 @@ interface CharacterCard {
 };
 
 const CharacterCard: FC<CharacterCard> = (props: CharacterCard) => {
+    const LocationId = props.LocationUrl.slice(41);
+
     return (
         <div className={styles.character__card}>
-            <Image className={styles.character__card__icon} src={props.Image} alt={props.Name} width={254} height={224} />
+            <Image className={styles.character__card__icon} src={props.Image} alt={props.Name} width={254} height={224} priority={true} />
             <div className={styles.character__card__info}>
                 <Link href={"/Character/" + props.Id} className={styles.name}>{props.Name}</Link>
                 <div className={styles.bio__block}>
@@ -26,7 +28,7 @@ const CharacterCard: FC<CharacterCard> = (props: CharacterCard) => {
                 </div>
                 <div className={styles.location__block}>
                     <h5 className={styles.info__title}>Last known location:</h5>
-                    <Link href={"/Location/" + props.LocationUrl} className={styles.info__text}>{props.LastLocation}</Link>
+                    <Link href={"/Location/" + LocationId} className={styles.info__text}>{props.LastLocation}</Link>
                 </div>
             </div>
         </div>
