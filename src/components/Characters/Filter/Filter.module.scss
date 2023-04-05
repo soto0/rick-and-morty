@@ -1,0 +1,42 @@
+.filter {
+    padding-top: 100px;
+}
+
+.search {
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.filter__title {
+    margin-top: 50px;
+}
+
+.status__block,
+.gender__block {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    text-transform:capitalize;
+}
+
+.filter__block,
+.filter__block__active {
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: 18px;
+    background-color: #8ec647;
+}
+
+.filter__block__active {
+    background-color: #02b1c8;
+}
