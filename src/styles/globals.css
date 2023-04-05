@@ -49,6 +49,12 @@ h4 {
   color: white;
 }
 
+h5 {
+  font-weight: 600;
+  font-size: 17px;
+  color: rgb(65, 84, 87);
+}
+
 .container {
   max-width: 1600px;
   margin: 0 auto;

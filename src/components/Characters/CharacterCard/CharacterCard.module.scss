@@ -1,0 +1,62 @@
+.character__card {
+    border-radius: 20px;
+    display: flex;
+    background-color: #1b1a1a;
+    max-width: 600px;
+    a {
+        transition: all 0.15s;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #02b1c8;
+    }
+}
+
+.character__card__icon {
+    border-radius: 20px 0 0 20px;
+}
+
+.name {
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+}
+
+.character__card__info {
+    padding: 20px;
+}
+
+.bio__block {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.status__ellipse__alive,
+.status__ellipse__dead {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: block;
+    background-color: #83c041;
+}
+
+.status__ellipse__dead {
+    background-color: #da3543;
+}
+
+.bio {
+    color: white;
+}
+
+.location__block,
+.seen__block {
+    margin-top: 15px;
+}
+
+.info__text {
+    font-weight: 400;
+    color: white;
+    margin-top: 5px;
+}
