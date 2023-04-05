@@ -28,6 +28,13 @@ h1 {
   letter-spacing: 0.1em;
 }
 
+
+h3 {
+  font-size: 35px;
+  color: white;
+  font-weight: 600;
+}
+
 .button {
   text-decoration: none;
   cursor: pointer;
