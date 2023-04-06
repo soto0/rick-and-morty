@@ -1,4 +1,3 @@
-
 import { ICharacter } from "@/models/ICharacter";
 import { ICharacters } from "@/models/ICharacters";
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';

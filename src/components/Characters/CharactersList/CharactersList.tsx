@@ -20,6 +20,7 @@ const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
     const prevPage = characters?.info.prev?.replace(/[^0-9]/g, "");
 
     return (
+        // TODO: добавить обновление данных каждые 5 минут
         <section className={styles.characters__list}>
             <div className="container">
                 <div className={styles.characters__top}>

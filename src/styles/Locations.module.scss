@@ -1,0 +1,38 @@
+.locations__title {
+    padding-top: 100px;
+}
+
+.locations__list {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-auto-flow: dense;
+    position: relative;
+    grid-template-columns: repeat(2, auto);
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.location__card {
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #1b1a1a;
+    a {
+        transition: all 0.15s;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #02b1c8;
+    }
+}
+
+.name {
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+}
+
+
+.dimension {
+    color: white;
+}
