@@ -1,0 +1,24 @@
+.prev__pagination,
+.next__pagination {
+    width: 90px;
+    padding: 5px 5px;
+    margin-left: auto;
+    color: white;
+    border-radius: 5px;   
+    background-color: #83c041;
+    cursor: pointer;
+}
+
+.next__pagination {
+    margin-left: 15px;
+}
+
+@media screen and (max-width: 430px) {
+    .prev__pagination,
+    .next__pagination {
+        width: 60px;
+    }
+    .next__pagination {
+        margin-left: 10px;
+    }
+}

@@ -12,24 +12,9 @@
     gap: 20px;
     grid-auto-flow: dense;
     position: relative;
-    grid-template-columns: repeat(2, auto);
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 50%);
     padding-bottom: 50px;
-}
-
-.prev__pagination,
-.next__pagination {
-    width: 90px;
-    padding: 5px 5px;
-    margin-left: auto;
-    color: white;
-    border-radius: 5px;   
-    background-color: #83c041;
-    cursor: pointer;
-}
-
-.next__pagination {
-    margin-left: 15px;
+    padding-right: 20px;
 }
 
 @media screen and (max-width: 1220px) {
@@ -38,9 +23,10 @@
     }
 }
 
-@media screen and (max-width: 1130px) {
+@media screen and (max-width: 1135px) {
     .characters__block {
-        grid-template-columns: repeat(1, auto);
+        grid-template-columns: repeat(1, 100%);
+        padding-right: 0;
     }
 }
 

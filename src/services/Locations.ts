@@ -5,9 +5,12 @@ export const locationsAPI = createApi({
     reducerPath: 'locationsAPI',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://rickandmortyapi.com/api' }),
     endpoints: (build) => ({
-        getLocations: build.query<ILocations, void>({
-            query: () => ({
-                url: '/location'
+        getLocations: build.query<ILocations, number>({
+            query: (page) => ({
+                url: '/location',
+                params: {
+                    page: page
+                }
             })
         })
     })
