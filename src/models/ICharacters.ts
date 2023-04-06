@@ -1,5 +1,5 @@
 export interface ICharacters {
-    data: ICharacters[] | undefined,
+    characters: ICharacters[] | undefined,
     results: any,
     info: any,
     id: number,

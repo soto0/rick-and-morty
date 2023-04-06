@@ -8,7 +8,7 @@ const Header: FC = () => {
     return (
         <header>
             <div className="header__container container">
-                <Link href="" className={styles.logo}>
+                <Link href="/" className={styles.logo}>
                     <Image src={Logo} alt="logo" width={60} height={60} />
                 </Link>
                 <nav className={styles.navbar}>
