@@ -6,21 +6,32 @@ import CharacterCard from "../CharacterCard/CharacterCard";
 import Error from "@/components/Error/Error";
 import styles from './CharactersList.module.scss';
 
+interface CharactersProps {
+    SetPage: any,
+    Status: string | undefined,
+    Page: number | undefined,
+    Gender: string | undefined,
+    Name: string | undefined
+};
+
 type characterType = ICharacters;
 
-const CharactersList: FC = () => {
-    const [page, setPage] = useState<number>(1);
-    const { data: characters, error, isLoading, isSuccess } = charactersAPI.useGetCharactersQuery(page);
-    const nextPage = (characters as unknown as characterType)?.info.next?.slice(47);
-    const prevPage = (characters as unknown as characterType)?.info.prev?.slice(47);
+const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
+    const { data: characters, error, isLoading, isSuccess } = charactersAPI.useGetCharactersQuery({ page: props.Page, status: props.Status, gender: props.Gender, name: props.Name });
+    const nextPage = (characters as unknown as characterType)?.info.next?.replace(/[^0-9]/g, "");
+    const prevPage = (characters as unknown as characterType)?.info.prev?.replace(/[^0-9]/g, "");
 
     return (
         <section className={styles.characters__list}>
             <div className="container">
                 <div className={styles.characters__top}>
                     <h3 className={styles.title}>Characters</h3>
-                    <button className={styles.prev__pagination} onClick={() => { setPage(prevPage) }} disabled={page === 1}>Rick</button>
-                    <button className={styles.next__pagination} onClick={() => { setPage(nextPage) }} disabled={page === (characters as unknown as characterType)?.info.pages}>Morty</button>
+                    {
+                        !error && <>
+                            <button className={styles.prev__pagination} onClick={() => { props.SetPage(prevPage) }} disabled={props.Page === 1}>Rick</button>
+                            <button className={styles.next__pagination} onClick={() => { props.SetPage(nextPage) }} disabled={props.Page === (characters as unknown as characterType)?.info.pages}>Morty</button>
+                        </>
+                    }
                 </div>
                 <div className={styles.characters__block}>
                     {error && <Error />}
