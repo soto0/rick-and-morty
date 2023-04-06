@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Link from "next/link";
 import Image from "next/image";
+import Status from "@/components/Status/Status";
 import styles from './CharacterCard.module.scss';
-import { charactersAPI } from "@/services/Characters";
 
 interface CharacterCard {
     Id: number,
@@ -22,10 +22,7 @@ const CharacterCard: FC<CharacterCard> = (props: CharacterCard) => {
             <Image className={styles.character__card__icon} src={props.Image} alt={props.Name} width={254} height={224} priority={true} />
             <div className={styles.character__card__info}>
                 <Link href={"/Character/" + props.Id} className={styles.name}>{props.Name}</Link>
-                <div className={styles.bio__block}>
-                    <span className={props.Status === 'Alive' ? styles.status__ellipse__alive : styles.status__ellipse__dead}></span>
-                    <p className={styles.bio}>{props.Status} | {props.Species}</p>
-                </div>
+                <Status Status={props.Status} Species={props.Species} />
                 <div className={styles.location__block}>
                     <h5 className={styles.info__title}>Last known location:</h5>
                     <Link href={"/Location/" + LocationId} className={styles.info__text}>{props.LastLocation}</Link>
