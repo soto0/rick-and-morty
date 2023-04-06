@@ -1,15 +1,12 @@
 import { FC, useEffect } from 'react';
+import { useRouter } from "next/router";
 import Head from 'next/head';
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/layout/Layout";
 import Status from "@/components/Status/Status";
-import { useRouter } from "next/router";
-import { ICharacter } from "@/models/ICharacter";
 import { charactersAPI } from "@/services/Characters";
 import styles from './Character.module.scss';
-
-type characterType = ICharacter;
 
 const Character: FC = () => {
     const CharacterId = useRouter();
@@ -24,26 +21,28 @@ const Character: FC = () => {
     return (
         <>
             <Head>
-                <title>{(character as unknown as characterType)?.name} | Rick And Morty</title>
+                <title>{character && character.name} | Rick And Morty</title>
             </Head>
             <Layout>
-                <section className={styles.character__top}>
-                    <div className="container">
-                        <Image className={styles.image} src='https://rickandmortyapi.com/api/character/avatar/178.jpeg' width={300} height={300} alt="icon" />
-                        <h3 className={styles.name}>Jerry Smith</h3>
-                        <Status Status={'da'} Species={'da'} />
-                    </div>
-                </section>
-                <section className={styles.character__bottom}>
-                    <div className="container">
-                        <div className={styles.info}>
-                            <h4 className={styles.title}>Origin</h4>
-                            <Link href="/Location/1" className={styles.info__text}>Earth (C-500A)</Link>
-                            <h4 className={styles.title}>Last Location</h4>
-                            <Link href="/Location/1" className={styles.info__text}>Earth (C-500A)</Link>
+                {character && isSuccess && <>
+                    <section className={styles.character__top}>
+                        <div className="container">
+                            <Image className={styles.image} src={character.image} width={300} height={300} alt="icon" />
+                            <h3 className={styles.name}>{character.name}</h3>
+                            <Status Status={character.status} Species={character.species} />
                         </div>
-                    </div>
-                </section>
+                    </section>
+                    <section className={styles.character__bottom}>
+                        <div className="container">
+                            <div className={styles.info}>
+                                <h4 className={styles.title}>Origin</h4>
+                                <Link href={"/Location/" + character.origin.url} className={styles.info__text}>{character.origin.name}</Link>
+                                <h4 className={styles.title}>Last Location</h4>
+                                <Link href={"/Location/" + character.location.url} className={styles.info__text}>{character.location.name}</Link>
+                            </div>
+                        </div>
+                    </section>
+                </>}
             </Layout>
         </>
     );

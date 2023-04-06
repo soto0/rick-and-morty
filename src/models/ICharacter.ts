@@ -1,5 +1,10 @@
 export interface ICharacter {
-    character: any | undefined,
+    character: ICharacter[] | undefined,
     name: string,
-    image: string
-}
+    image: string,
+    status: string,
+    species: string,
+    origin: ICharacter,
+    location: ICharacter,
+    url: string,
+};

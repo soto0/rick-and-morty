@@ -14,12 +14,10 @@ interface CharactersProps {
     Name: string | undefined
 };
 
-type charactersType = ICharacters;
-
 const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
     const { data: characters, error, isLoading, isSuccess } = charactersAPI.useGetCharactersQuery({ page: props.Page, status: props.Status, gender: props.Gender, name: props.Name });
-    const nextPage = (characters as unknown as charactersType)?.info.next?.replace(/[^0-9]/g, "");
-    const prevPage = (characters as unknown as charactersType)?.info.prev?.replace(/[^0-9]/g, "");
+    const nextPage = characters?.info.next?.replace(/[^0-9]/g, "");
+    const prevPage = characters?.info.prev?.replace(/[^0-9]/g, "");
 
     return (
         <section className={styles.characters__list}>
@@ -27,9 +25,9 @@ const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
                 <div className={styles.characters__top}>
                     <h3 className={styles.title}>Characters</h3>
                     {
-                        !error && <>
+                        !error && characters && <>
                             <button className={styles.prev__pagination} onClick={() => { props.SetPage(prevPage) }} disabled={props.Page === 1}>Rick</button>
-                            <button className={styles.next__pagination} onClick={() => { props.SetPage(nextPage) }} disabled={props.Page === (characters as unknown as charactersType)?.info.pages}>Morty</button>
+                            <button className={styles.next__pagination} onClick={() => { props.SetPage(nextPage) }} disabled={props.Page === characters.info.pages}>Morty</button>
                         </>
                     }
                 </div>
@@ -37,7 +35,7 @@ const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
                     {error && <Error />}
                     {isLoading && <Loader />}
                     {isSuccess &&
-                        characters && (characters as unknown as charactersType).results.map((character: ICharacters) => {
+                        characters && characters.results.map((character: ICharacters) => {
                             return (
                                 <CharacterCard
                                     Id={character.id}
@@ -54,7 +52,7 @@ const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
                     }
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 
