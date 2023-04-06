@@ -40,3 +40,12 @@
 .filter__block__active {
     background-color: #02b1c8;
 }
+
+@media screen and (max-width: 520px) {
+    .gender__block {
+        flex-wrap: wrap;
+    }
+    .search {
+        width: 100%;
+    }
+}

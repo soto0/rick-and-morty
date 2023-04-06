@@ -80,17 +80,9 @@ h5 {
   transition: all 0.2s;
 }
 
-.button:hover {
-  box-shadow: 0 0 10px #84d343;
-}
-
 .filter__button {
   padding: 7.3px 50px;
   border-radius: 0 5px 5px 0;
-}
-
-.filter__button:hover {
-  box-shadow: none;
 }
 
 .loader {
@@ -119,6 +111,12 @@ h5 {
   .main__button {
     padding: 10px 170px;
     font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .filter__button {
+    padding: 7.3px 25px;
   }
 }
 

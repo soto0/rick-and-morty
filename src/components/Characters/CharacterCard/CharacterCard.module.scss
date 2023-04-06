@@ -60,3 +60,25 @@
     color: white;
     margin-top: 5px;
 }
+
+@media screen and (max-width: 600px) {
+    .character__card__icon {
+        min-width: 220px;
+        width: 220px;
+        height: auto;
+    }
+    .name {
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .character__card__icon {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .character__card {
+        flex-direction: column;
+    }
+}
