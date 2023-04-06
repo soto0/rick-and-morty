@@ -1,0 +1,31 @@
+.character__top {
+    padding-top: 100px;
+    text-align: center;
+    div {
+        justify-content: center;
+    }
+}
+
+.image {
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgb(26, 25, 25);
+}
+
+.name {
+    margin-top: 10px;
+}
+
+.character__bottom {
+    padding-top: 50px;
+}
+
+.info__text {
+    color: #83c041;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 25px;
+    width: max-content;
+    display: block;
+    margin-bottom: 50px;
+}
