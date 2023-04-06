@@ -6,11 +6,13 @@ export const charactersAPI = createApi({
     reducerPath: 'charactersAPI',
     baseQuery: fetchBaseQuery({ baseUrl: 'https://rickandmortyapi.com/api' }),
     endpoints: (build) => ({
-        getCharacters: build.query<ICharacters[], void>({
-            query: () => ({
-                url: '/character'
+        getCharacters: build.query<ICharacters[], number>({
+            query: (page: number) => ({
+                url: '/character',
+                params: {
+                    page: page
+                }
             }),
-            transformResponse: (response: any) => response.results
         })
     })
 });

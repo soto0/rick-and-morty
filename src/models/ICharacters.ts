@@ -1,6 +1,7 @@
 export interface ICharacters {
     data: ICharacters[] | undefined,
     results: any,
+    info: any,
     id: number,
     name: string,
     status: string,
@@ -8,4 +9,5 @@ export interface ICharacters {
     location: ICharacters,
     url: string,
     image: string,
+    pages: number
 };
