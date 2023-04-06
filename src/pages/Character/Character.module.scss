@@ -19,6 +19,14 @@
     padding-top: 50px;
 }
 
+.info {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: space-between;
+}
+
 .info__text {
     color: #83c041;
     text-decoration: none;
@@ -28,4 +36,14 @@
     width: max-content;
     display: block;
     margin-bottom: 50px;
+}
+
+@media screen and (max-width: 360px) {
+    .info {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .info__text {
+        margin: 0 auto;
+    }
 }
