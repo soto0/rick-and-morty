@@ -58,7 +58,7 @@ const Location: FC = () => {
                                         slidesPerView={3}
                                         breakpoints={{
                                             1470: {
-                                                slidesPerView: 2
+                                                slidesPerView: 3
                                             },
                                             1080: {
                                                 slidesPerView: 2
