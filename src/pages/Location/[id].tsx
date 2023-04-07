@@ -26,6 +26,7 @@ const Location: FC = () => {
         }
     }, [LocationId, Location]);
 
+    console.log(residents);
     return (
         <>
             <Head>
@@ -51,7 +52,7 @@ const Location: FC = () => {
                                     slidesPerView={3}
                                 >
                                     {
-                                        residents && residents.map((resident: ILocation) => {
+                                        residents?.map((resident: ILocation) => {
                                             return (
                                                 <SwiperSlide className={styles.slide}>
                                                     <CharacterCard

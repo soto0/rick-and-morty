@@ -17,9 +17,14 @@
 }
 
 .name {
+    display: block;
     font-size: 35px;
     color: white;
     font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 225px;
 }
 
 .character__card__info {
