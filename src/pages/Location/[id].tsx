@@ -5,6 +5,8 @@ import { ILocation } from "@/models/ILocation";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Head from "next/head";
 import Layout from "@/layout/Layout";
+import Loader from "@/components/Loader/Loader";
+import Error from "@/components/Error/Error";
 import CharacterCard from "@/components/Characters/CharacterCard/CharacterCard";
 import styles from "./Locations.module.scss";
 import 'swiper/css';
@@ -14,7 +16,6 @@ const Location: FC = () => {
     const [getLocation, { data: Location, error, isLoading, isSuccess }] = locationsAPI.useLazyGetLocationQuery();
     const [getResidents, { data: residents }] = locationsAPI.useLazyGetResidentsQuery();
 
-
     useEffect(() => {
         if (LocationId.query.id) {
             getLocation(Number(LocationId.query.id))
@@ -22,11 +23,13 @@ const Location: FC = () => {
 
         if (Location && Location.residents) {
             const residentsIds = Location.residents.map((resident: string) => resident.match(/\d+/));
-            getResidents(residentsIds);
+
+            if (residentsIds.length !== 0) {
+                getResidents(residentsIds);
+            };
         }
     }, [LocationId, Location]);
 
-    console.log(residents);
     return (
         <>
             <Head>
@@ -35,6 +38,8 @@ const Location: FC = () => {
             <Layout>
                 <section className={styles.location}>
                     <div className="container">
+                        {error && <Error />}
+                        {isLoading && <Loader />}
                         {
                             Location && isSuccess && <>
                                 <h3 className={styles.title}>{Location.name}</h3>
@@ -44,34 +49,36 @@ const Location: FC = () => {
                                 <p className={styles.location__text}>{Location.dimension}</p>
                             </>
                         }
-                        <div className={styles.residents__block}>
-                            <h3 className={styles.title}>Residents</h3>
-                            <div className={styles.residents__slider}>
-                                <Swiper
-                                    spaceBetween={20}
-                                    slidesPerView={3}
-                                >
-                                    {
-                                        residents?.map((resident: ILocation) => {
-                                            return (
-                                                <SwiperSlide className={styles.slide}>
-                                                    <CharacterCard
-                                                        Id={resident.id}
-                                                        Name={resident.name}
-                                                        Status={resident.status}
-                                                        Species={resident.species}
-                                                        LastLocation={resident.location.name}
-                                                        LocationUrl={resident.location.url}
-                                                        Image={resident.image}
-                                                        key={resident.id}
-                                                    />
-                                                </SwiperSlide>
-                                            )
-                                        })
-                                    }
-                                </Swiper>
+                        {
+                            residents && <div className={styles.residents__block}>
+                                <h3 className={styles.title}>Residents</h3>
+                                <div className={styles.residents__slider}>
+                                    <Swiper
+                                        spaceBetween={20}
+                                        slidesPerView={3}
+                                    >
+                                        {
+                                            residents.map((resident: ILocation) => {
+                                                return (
+                                                    <SwiperSlide className={styles.slide}>
+                                                        <CharacterCard
+                                                            Id={resident.id}
+                                                            Name={resident.name}
+                                                            Status={resident.status}
+                                                            Species={resident.species}
+                                                            LastLocation={resident.location.name}
+                                                            LocationUrl={resident.location.url}
+                                                            Image={resident.image}
+                                                            key={resident.id}
+                                                        />
+                                                    </SwiperSlide>
+                                                )
+                                            })
+                                        }
+                                    </Swiper>
+                                </div>
                             </div>
-                        </div>
+                        }
                     </div>
                 </section>
             </Layout>
