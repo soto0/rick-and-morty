@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
-import ErrorIcon from "./../../icons/Error/Error.png";
+import ErrorIcon from "./../../icons/Error/error.png";
 
 const Error: FC = () => {
     return (
