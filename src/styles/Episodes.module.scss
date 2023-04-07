@@ -18,13 +18,15 @@
     border-radius: 20px;
     padding: 10px 20px;
     background-color: #1b1a1a;
-    a {
-        transition: all 0.15s;
-        text-decoration: none;
-    }
-    a:hover {
-        color: #02b1c8;
-    }
+}
+
+.name {
+    transition: all 0.15s;
+    text-decoration: none;
+}
+
+.name:hover {
+    color: #02b1c8;
 }
 
 

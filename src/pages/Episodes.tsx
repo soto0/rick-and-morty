@@ -31,7 +31,7 @@ const Episodes: FC = () => {
                             episodes && isSuccess && episodes.results.map((episode: IEpisodes) => {
                                 return (
                                     <div className={styles.episode__card} key={episode.id}>
-                                        <Link href={"/Episodes/" + episode.id} className={styles.name}>{episode.name}</Link>
+                                        <p className={styles.name}>{episode.name}</p>
                                         <h5 className={styles.title}>Episode</h5>
                                         <p className={styles.episode}>{episode.episode}</p>
                                     </div>
