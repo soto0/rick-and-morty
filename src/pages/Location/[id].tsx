@@ -56,11 +56,22 @@ const Location: FC = () => {
                                     <Swiper
                                         spaceBetween={20}
                                         slidesPerView={3}
+                                        breakpoints={{
+                                            1470: {
+                                                slidesPerView: 2
+                                            },
+                                            1080: {
+                                                slidesPerView: 2
+                                            },
+                                            320: {
+                                                slidesPerView: 1
+                                            }
+                                        }}
                                     >
                                         {
                                             residents.map((resident: ILocation) => {
                                                 return (
-                                                    <SwiperSlide className={styles.slide}>
+                                                    <SwiperSlide className={styles.slide} key={resident.id}>
                                                         <CharacterCard
                                                             Id={resident.id}
                                                             Name={resident.name}
@@ -69,7 +80,6 @@ const Location: FC = () => {
                                                             LastLocation={resident.location.name}
                                                             LocationUrl={resident.location.url}
                                                             Image={resident.image}
-                                                            key={resident.id}
                                                         />
                                                     </SwiperSlide>
                                                 )
