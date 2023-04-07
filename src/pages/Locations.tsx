@@ -6,12 +6,12 @@ import Error from "@/components/Error/Error";
 import Loader from "@/components/Loader/Loader";
 import { locationsAPI } from "@/services/Locations";
 import { ILocations } from "@/models/ILocations";
-import styles from './../styles/Locations.module.scss';
+import styles from "./../styles/Locations.module.scss";
 import Pagination from "@/components/Pagination/Pagination";
 
 const Locations: FC = () => {
     const [page, setPage] = useState<number>(1);
-    const { data: locations, error, isLoading, isSuccess } = locationsAPI.useGetLocationsQuery(page);
+    const { data: locations, error, isLoading, isSuccess } = locationsAPI.useGetLocationsQuery(page, { pollingInterval: 300000 });
 
     return (
         <>

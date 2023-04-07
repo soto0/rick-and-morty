@@ -1,14 +1,14 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect } from "react";
 import { useRouter } from "next/router";
 import { charactersAPI } from "@/services/Characters";
-import Head from 'next/head';
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/layout/Layout";
 import Status from "@/components/Status/Status";
 import Loader from "@/components/Loader/Loader";
 import Error from "@/components/Error/Error";
-import styles from './Character.module.scss';
+import styles from "./Character.module.scss";
 
 const Character: FC = () => {
     const CharacterId = useRouter();
@@ -43,7 +43,7 @@ const Character: FC = () => {
                                     <div className={styles.info__block}>
                                         <h4 className={styles.title}>Origin</h4>
                                         {
-                                            character.origin.name !== 'unknown' ?
+                                            character.origin.name !== "unknown" ?
                                                 <Link href={"/Location/" + character.origin.url.slice(41)} className={styles.info__text}>{character.origin.name}</Link> :
                                                 <p className={styles.info__text}>{character.origin.name}</p>
                                         }

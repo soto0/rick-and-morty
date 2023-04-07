@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { FC } from "react";
 import { charactersAPI } from "@/services/Characters";
 import { ICharacters } from "@/models/ICharacters";
 import Pagination from "@/components/Pagination/Pagination";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import Error from "@/components/Error/Error";
 import Loader from "@/components/Loader/Loader";
-import styles from './CharactersList.module.scss';
+import styles from "./CharactersList.module.scss";
 
 interface CharactersProps {
     SetPage: any,
@@ -16,7 +16,7 @@ interface CharactersProps {
 };
 
 const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
-    const { data: characters, error, isLoading, isSuccess } = charactersAPI.useGetCharactersQuery({ page: props.Page, status: props.Status, gender: props.Gender, name: props.Name });
+    const { data: characters, error, isLoading, isSuccess } = charactersAPI.useGetCharactersQuery({ page: props.Page, status: props.Status, gender: props.Gender, name: props.Name }, { pollingInterval: 300000 });
 
     return (
         // TODO: добавить обновление данных каждые 5 минут

@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from './CategoryCards.module.scss';
-import CharactersIcon from './../../icons/Categories/character.png';
-import LocationsIcon from './../../icons/Categories/location.png';
-import EpisodesIcon from './../../icons/Categories/episode.png';
+import styles from "./CategoryCards.module.scss";
+import CharactersIcon from "./../../icons/Categories/character.png";
+import LocationsIcon from "./../../icons/Categories/location.png";
+import EpisodesIcon from "./../../icons/Categories/episode.png";
 
 const CategoryCards: FC = () => {
     return (

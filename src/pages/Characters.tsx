@@ -1,5 +1,5 @@
-import { FC, useState } from 'react';
-import Head from 'next/head';
+import { FC, useState } from "react";
+import Head from "next/head";
 import Layout from "@/layout/Layout";
 import Filter from "@/components/Characters/Filter/Filter";
 import CharactersList from "@/components/Characters/CharactersList/CharactersList";

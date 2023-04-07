@@ -2,14 +2,14 @@ import { FC, useEffect } from "react";
 import { useRouter } from "next/router";
 import { locationsAPI } from "@/services/Locations";
 import { ILocation } from "@/models/ILocation";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 import Head from "next/head";
 import Layout from "@/layout/Layout";
 import Loader from "@/components/Loader/Loader";
 import Error from "@/components/Error/Error";
 import CharacterCard from "@/components/Characters/CharacterCard/CharacterCard";
 import styles from "./Locations.module.scss";
-import 'swiper/css';
+import "swiper/css";
 
 const Location: FC = () => {
     const LocationId = useRouter();

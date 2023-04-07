@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import Head from 'next/head';
-import Layout from '@/layout/Layout';
-import Title from '@/components/Title/Title';
+import { FC } from "react";
+import Head from "next/head";
+import Layout from "@/layout/Layout";
+import Title from "@/components/Title/Title";
 
 const Home: FC = () => {
   return (

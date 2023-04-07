@@ -3,7 +3,6 @@ import { episodesAPI } from "@/services/Episodes";
 import { IEpisodes } from "@/models/IEpisodes";
 import Head from "next/head";
 import Layout from "@/layout/Layout";
-import Link from "next/link";
 import Pagination from "@/components/Pagination/Pagination";
 import Error from "@/components/Error/Error";
 import Loader from "@/components/Loader/Loader";
@@ -11,7 +10,7 @@ import styles from "./../styles/Episodes.module.scss";
 
 const Episodes: FC = () => {
     const [page, setPage] = useState<number>(1);
-    const { data: episodes, error, isLoading, isSuccess } = episodesAPI.useGetEpisodesQuery(page);
+    const { data: episodes, error, isLoading, isSuccess } = episodesAPI.useGetEpisodesQuery(page, { pollingInterval: 300000 });
 
     return (
         <>

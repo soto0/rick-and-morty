@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC } from "react";
 import Image from "next/image";
-import LoaderGif from './../../icons/Loading/loading.gif';
+import LoaderGif from "./../../icons/Loading/loading.gif";
 
 const Loader: FC = () => {
     return (

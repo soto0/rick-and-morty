@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Status from "@/components/Status/Status";
-import styles from './CharacterCard.module.scss';
+import styles from "./CharacterCard.module.scss";
 
 interface CharacterCard {
     Id: number,
@@ -26,7 +26,7 @@ const CharacterCard: FC<CharacterCard> = (props: CharacterCard) => {
                 <div className={styles.location__block}>
                     <h5 className={styles.info__title}>Last known location:</h5>
                     {
-                        props.LastLocation !== 'unknown' ?
+                        props.LastLocation !== "unknown" ?
                             <Link href={"/Location/" + LocationId} className={styles.info__text}>{props.LastLocation}</Link> :
                             <p className={styles.info__text}>{props.LastLocation}</p>
                     }

@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import styles from './Status.module.scss';
+import { FC } from "react";
+import styles from "./Status.module.scss";
 
 interface StatusProps {
     Status: string,
@@ -9,7 +9,7 @@ interface StatusProps {
 const Status: FC<StatusProps> = (props: StatusProps) => {
     return (
         <div className={styles.bio__block}>
-            <span className={props.Status === 'Alive' ? styles.status__ellipse__alive : styles.status__ellipse__dead}></span>
+            <span className={props.Status === "Alive" ? styles.status__ellipse__alive : styles.status__ellipse__dead}></span>
             <p className={styles.bio}>{props.Status} | {props.Species}</p>
         </div>
     );
