@@ -1,5 +1,6 @@
 import { FC, useEffect } from 'react';
 import { useRouter } from "next/router";
+import { charactersAPI } from "@/services/Characters";
 import Head from 'next/head';
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +8,6 @@ import Layout from "@/layout/Layout";
 import Status from "@/components/Status/Status";
 import Loader from "@/components/Loader/Loader";
 import Error from "@/components/Error/Error";
-import { charactersAPI } from "@/services/Characters";
 import styles from './Character.module.scss';
 
 const Character: FC = () => {

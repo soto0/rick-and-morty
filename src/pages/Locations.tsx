@@ -31,7 +31,7 @@ const Locations: FC = () => {
                             locations && isSuccess && locations.results.map((location: ILocations) => {
                                 return (
                                     <div className={styles.location__card} key={location.id}>
-                                        <Link href={"/Character/" + location.id} className={styles.name}>{location.name}</Link>
+                                        <Link href={"/Location/" + location.id} className={styles.name}>{location.name}</Link>
                                         <h5 className={styles.title}>Dimension</h5>
                                         <p className={styles.dimension}>{location.dimension}</p>
                                     </div>
