@@ -13,7 +13,7 @@ const Title: FC = () => {
                         <h1 className={styles.title}>A large collection of characters, locations and episodes of the cult animated series.</h1>
                         <Link href="/Categories" className="main__button button">Taste</Link>
                     </div>
-                    <Image src={MainIcon} alt="rick and morty" width={800} height={800} />
+                    <Image src={MainIcon} alt="rick and morty" width={800} height={800} priority={true} />
                 </div>
             </div>
         </section>

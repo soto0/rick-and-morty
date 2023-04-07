@@ -69,7 +69,7 @@ const Location: FC = () => {
                                         }}
                                     >
                                         {
-                                            residents.map((resident: ILocation) => {
+                                            (Array.isArray(residents) ? residents : [residents]).map((resident: ILocation) => {
                                                 return (
                                                     <SwiperSlide className={styles.slide} key={resident.id}>
                                                         <CharacterCard

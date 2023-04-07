@@ -12,7 +12,7 @@ const NotFound: FC = () => {
             </Head>
             <Layout>
                 <div className="error">
-                    <Image src={ErrorIcon} alt="error" width={400} height={400} priority={true} />
+                    <Image src={ErrorIcon} alt="error" width={400} height={400} priority={true} blurDataURL={'./../icons/Error/error.png'} />
                     <h1 className="error__title">404 Not Found</h1>
                 </div>
             </Layout>
