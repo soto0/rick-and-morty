@@ -19,7 +19,6 @@ const CharactersList: FC<CharactersProps> = (props: CharactersProps) => {
     const { data: characters, error, isLoading, isSuccess } = charactersAPI.useGetCharactersQuery({ page: props.Page, status: props.Status, gender: props.Gender, name: props.Name }, { pollingInterval: 300000 });
 
     return (
-        // TODO: добавить обновление данных каждые 5 минут
         <section className={styles.characters__list}>
             <div className="container">
                 <div className={styles.characters__top}>
