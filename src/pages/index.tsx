@@ -8,7 +8,7 @@ const Home: FC = () => {
     <>
       <Head>
         <title>Main | Rick And Morty</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <Layout>
         <Title />
