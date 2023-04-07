@@ -25,7 +25,11 @@ const CharacterCard: FC<CharacterCard> = (props: CharacterCard) => {
                 <Status Status={props.Status} Species={props.Species} />
                 <div className={styles.location__block}>
                     <h5 className={styles.info__title}>Last known location:</h5>
-                    <Link href={"/Location/" + LocationId} className={styles.info__text}>{props.LastLocation}</Link>
+                    {
+                        props.LastLocation !== 'unknown' ?
+                            <Link href={"/Location/" + LocationId} className={styles.info__text}>{props.LastLocation}</Link> :
+                            <p className={styles.info__text}>{props.LastLocation}</p>
+                    }
                 </div>
             </div>
         </div>

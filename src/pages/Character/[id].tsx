@@ -42,7 +42,11 @@ const Character: FC = () => {
                                 <div className={styles.info}>
                                     <div className={styles.info__block}>
                                         <h4 className={styles.title}>Origin</h4>
-                                        <Link href={"/Location/" + character.origin.url.slice(41)} className={styles.info__text}>{character.origin.name}</Link>
+                                        {
+                                            character.origin.name !== 'unknown' ?
+                                                <Link href={"/Location/" + character.origin.url.slice(41)} className={styles.info__text}>{character.origin.name}</Link> :
+                                                <p className={styles.info__text}>{character.origin.name}</p>
+                                        }
                                     </div>
                                     <div className={styles.info__block}>
                                         <h4 className={styles.title}>Last Location</h4>
