@@ -5,7 +5,7 @@ const nextConfig = {
     loader: "akamai",
     path: "",
     domains: ['rickandmortyapi.com'],
-  },
+  }
 }
 
 module.exports = nextConfig
